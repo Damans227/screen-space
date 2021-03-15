@@ -27,6 +27,26 @@ public class userDao {
 		tx.commit();
 		
 	}
+	
+		public static userModel getUser(String uname, String pass) {
+		
+		userModel user = new userModel();
+			
+		SessionFactory sf = factoryProvider.availableFactory();
+		
+		Session session = sf.openSession();
+		
+		Transaction tx = session.beginTransaction();
+		
+		user = (userModel)session.get(userModel.class, uname);
+		
+		tx.commit();
+		
+		session.close();
+		
+		return user;
+		
+	}
 
 
 	

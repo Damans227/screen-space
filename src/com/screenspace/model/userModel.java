@@ -9,9 +9,10 @@ import javax.persistence.Id;
 public class userModel {
 
 	
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public userModel() {
+		super();
+	}
+	@Id
 	private String uname;
 	private String pass;
 	private String phone;

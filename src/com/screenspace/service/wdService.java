@@ -1,4 +1,4 @@
-package com.screenspace.controller;
+package com.screenspace.service;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,19 +13,21 @@ import javax.servlet.http.HttpSession;
 
 import com.screenspace.dao.imagesDao;
 
-/**
- * Servlet implementation class wdController
- */
-@WebServlet("/wdController")
-public class wdController extends HttpServlet {
+
+@WebServlet("/wdService")
+public class wdService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		List imageUrlList = imagesDao.imagesList();
+		
+		HttpSession session = request.getSession();
+		request.setAttribute("imageUrlList", imageUrlList);
 
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/wdService");
+		RequestDispatcher rd = request.getRequestDispatcher("/welcomeDashboard.jsp");
 		rd.forward(request, response);
 	}
 

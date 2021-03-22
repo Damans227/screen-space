@@ -13,20 +13,23 @@ import javax.servlet.http.HttpSession;
 
 import com.screenspace.dao.imagesDao;
 
-/**
- * Servlet implementation class wdController
- */
-@WebServlet("/wdController")
-public class wdController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
+@WebServlet("/previewController")
+public class previewController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+			
+		
+		List imageUrlList = imagesDao.imagesList();
+		
+		HttpSession session = request.getSession();
+		request.setAttribute("imageUrlList", imageUrlList);
 
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/wdService");
+		RequestDispatcher rd = request.getRequestDispatcher("/preview.jsp");
 		rd.forward(request, response);
+		
+		
 	}
 
 }

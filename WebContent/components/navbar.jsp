@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark custom-bg fixed-top">
-  <a class="navbar-brand" href="/Screenspace">Screenspace</a>
+  <a class="navbar-brand" href="wdController">Screenspace</a>
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">

@@ -29,7 +29,6 @@ public class uploadService extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-
 		try {
 
 			ServletFileUpload sf = new ServletFileUpload(new DiskFileItemFactory());
@@ -48,7 +47,8 @@ public class uploadService extends HttpServlet {
 			return;
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
+			response.sendRedirect("wdController");
 			e.printStackTrace();
 		}
 
@@ -60,6 +60,9 @@ public class uploadService extends HttpServlet {
 
 	}
 		
+		
 	}
+	
+
 
 

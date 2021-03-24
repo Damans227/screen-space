@@ -62,9 +62,9 @@ if(session.getAttribute("uname")==null){
 				<p class="card-text">Please upload images you would like to see
 					on your digital signage. You can upload multiple images at once.</p>
 					
-				<form action="uploadController" method="post"
+				<form action="imageController" method="post"
 					enctype="multipart/form-data">
-					<input type="file" name="file" multiple /> <input
+					<input type="file" name="file"/> <input
 						class="btn btn-secondary" type="submit" value="Upload">
 				</form>
 				<%@include file="components/message.jsp"%>
@@ -78,7 +78,7 @@ if(session.getAttribute("uname")==null){
 
 					<tr>
 						<th>#</th>
-						<th scope="col">Image name</th>
+						<th scope="col">Image Properties</th>
 						<th scope="col">Image File</th>
 
 					</tr>
@@ -86,8 +86,8 @@ if(session.getAttribute("uname")==null){
 					<c:forEach items="${imageUrlList}" var="item">
 						<tr>
 							<td></td>
-							<td>Image name: ${item}</td>
-							<td><img src="images/${item}" class="img-thumbnail"
+							<td>${item} </td>
+							<td><img src="data:image/jpg;base64,${item.base64Image}" class="img-thumbnail"
 								style="width: 150px; height: 100px;"></td>
 						</tr>
 					</c:forEach>

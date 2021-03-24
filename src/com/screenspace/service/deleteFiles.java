@@ -7,9 +7,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.io.FileUtils;
 
+import com.screenspace.dao.imageDao;
 import com.screenspace.dao.imagesDao;
 
 
@@ -21,7 +23,10 @@ public class deleteFiles extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-			imagesDao.purgeDirectory();
+			HttpSession session = request.getSession();
+			String uname = (String) session.getAttribute("uname");
+		
+			imageDao.deleteImages(uname);
 			response.sendRedirect("wdController");
 		
 	}

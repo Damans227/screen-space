@@ -22,6 +22,9 @@ public class uploadController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
+		String file = request.getParameter("file");
+		System.out.println(file);
+		
 		RequestDispatcher rd = request.getRequestDispatcher("uploadService");
 		rd.forward(request, response);
 		

@@ -1,9 +1,12 @@
 package com.screenspace.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class userModel {
@@ -17,6 +20,7 @@ public class userModel {
 	private String pass;
 	private String phone;
 	private String email;
+
 	
 	public userModel(String uname, String pass, String phone, String email) {
 		super();

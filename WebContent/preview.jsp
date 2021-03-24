@@ -9,113 +9,50 @@
 
 <%@include file="components/common_css_js.jsp"%>
 
-<style>
-
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
-
-/* Slideshow container */
-.slideshow-container {
-	margin-top:50px;
-  max-width: 100%;
-  position: relative;
-
-}
-
-
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 3s;
-  animation-name: fade;
-  animation-duration: 3s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
-</style>
 
 <title>Insert title here</title>
 </head>
 <body>
 
-<%
+	<%
+	response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 
-response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+	if (session.getAttribute("uname") == null) {
 
-if(session.getAttribute("uname")==null){
-	
-	response.sendRedirect("login.jsp");
-}
-
-
-%>
+		response.sendRedirect("login.jsp");
+	}
+	%>
 
 	<%@include file="components/wdnavbar.jsp"%>
 	
-<div class="slideshow-container">
+	<div class="slideshow-container">
 
-<c:forEach items="${imageUrlList}" var="item">
+		<c:forEach items="${imageUrlList}" var="item">
+		
+		<div class="mySlides fade">
 
-<div class="mySlides fade">
+				<img src="data:image/jpg;base64,${item.base64Image}" style="width: 100%">
+				
+		</div>
 
-  <img src="images/${item}" style="width:100%">
-
-</div>
-
-</c:forEach>
-
-
-</div>
-<br>
+		</c:forEach>
+		
+	</div>
+		
+		
 
 <div style="text-align:center">
+<c:forEach items="${imageUrlList}" var="item"> 
   <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
+</c:forEach>
 </div>	
 	
 
-	<!-- <div id="slideshow">
 
-		<c:forEach items="${imageUrlList}" var="item">
-			<img src="images/${item}" />
-		</c:forEach>
 
-	</div>-->
-	
 <script>
 var slideIndex = 0;
 showSlides();
-
 function showSlides() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
@@ -134,8 +71,6 @@ function showSlides() {
 }
 </script>
 	
-	
-
 
 </body>
 </html>

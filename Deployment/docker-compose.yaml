@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  docker-mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=Screenspace
+      - MYSQL_PASSWORD=root
+    ports:
+      - 3377:3306
+
+  app:
+    image: damans227/screenspace-webapp
+    ports:
+       - 8090:8080
+    depends_on:
+       - docker-mysql

@@ -3,9 +3,9 @@ body {font-family: Verdana, sans-serif;}
 img {vertical-align: middle;}
 /* Slideshow container */
 .slideshow-container {
-	margin-top:50px;
+	margin-top:20px;
   max-width: 100%;
-  position: relative;
+
 }
 /* The dots/bullets/indicators */
 .dot {

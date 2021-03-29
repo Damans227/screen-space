@@ -5,23 +5,23 @@
 
 <%@include file="components/common_css_js.jsp"%>
 
-<title>Insert title here</title>
+<title>Screenspace</title>
 </head>
 
 
-<script>  
-function validateform(){  
-var uname=document.myform.uname.value;  
-var pass=document.myform.pass.value;  
-  
-if (uname==null || uname==""){  
-  alert("Username can't be left blank!");  
-  return false;  
-}else if(pass==null || pass==""){  
-  alert("Password can't be left blank!");  
-  return false;  
-  }  
-}  
+<script>
+	function validateform() {
+		var uname = document.myform.uname.value;
+		var pass = document.myform.pass.value;
+
+		if (uname == null || uname == "") {
+			alert("Username can't be left blank!");
+			return false;
+		} else if (pass == null || pass == "") {
+			alert("Password can't be left blank!");
+			return false;
+		}
+	}
 </script>
 
 <body>

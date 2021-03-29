@@ -5,7 +5,7 @@
 
 <%@include file="components/common_css_js.jsp"%>
 
-<title>Insert title here</title>
+<title>Screenspace</title>
 </head>
 
 <script>

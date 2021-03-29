@@ -8,6 +8,8 @@
 
 
 <%@include file="components/common_css_js.jsp"%>
+<link rel="stylesheet" href="css/slideshow.css">
+
 
 
 <title>Insert title here</title>
@@ -25,18 +27,23 @@
 
 	<%@include file="components/wdnavbar.jsp"%>
 	
+	<div class="mt-5">
 	<div class="slideshow-container">
-
+		<br>
+		<h2 class="text-center">ScreenPlay Preview of your Digital Signage</h2>
+		<hr>
+	
 		<c:forEach items="${imageUrlList}" var="item">
 		
 		<div class="mySlides fade">
 
-				<img src="data:image/jpg;base64,${item.base64Image}" style="width: 100%">
+			<img class="rounded d-block mx-auto border border-secondary" src="data:image/jpg;base64,${item.base64Image}" style="width: 75%; height:550px;">
 				
 		</div>
 
 		</c:forEach>
 		
+	</div>
 	</div>
 		
 		
@@ -67,7 +74,7 @@ function showSlides() {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
+  setTimeout(showSlides, 3000); // Change image every 2 seconds
 }
 </script>
 	

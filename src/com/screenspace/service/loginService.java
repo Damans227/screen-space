@@ -32,6 +32,9 @@ public class loginService extends HttpServlet {
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("uname", uname);
+			session.setAttribute("pass", user.getPass());
+			session.setAttribute("phone", user.getPhone());
+			session.setAttribute("email", user.getEmail());
 			
 			response.sendRedirect("wdController");
 			

@@ -1,6 +1,7 @@
 package com.screenspace.service;
 
 import java.io.IOException;
+import java.sql.SQLIntegrityConstraintViolationException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,7 +25,8 @@ public class signupService extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		//System.out.println("signup service Fetched!");
-		
+	
+		try {
 		String uname = request.getParameter("uname");
 		String pass = request.getParameter("pass");
 		String phone = request.getParameter("phone");
@@ -36,8 +38,17 @@ public class signupService extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("uname", uname);
+		session.setAttribute("pass", pass);
+		session.setAttribute("phone", phone);
+		session.setAttribute("email", email);
 		
 		response.sendRedirect("wdController");
+		
+		}catch(Exception e) {
+			
+			RequestDispatcher rd = request.getRequestDispatcher("loginService");
+			rd.forward(request, response);
+		}
 		
 	}
 

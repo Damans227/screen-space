@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 @MultipartConfig(
 		
 		fileSizeThreshold = 1024 * 10, // 10 KB
-		maxFileSize = 1024*500,			// 500 KB
+		maxFileSize = 1024*2000,			// 2MB
 		maxRequestSize = 1024*1024		// 1 MB
 		
 		)

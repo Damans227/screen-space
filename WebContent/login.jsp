@@ -50,7 +50,7 @@
 						</div>
 
 						<div class="container text-center">
-							<input class="btn btn-secondary" type="submit" value="Login">
+							<input class="btn btn-dark" type="submit" value="Login">
 							<a class="btn btn-outline-primary" href="/Screenspace">Sign
 								Up</a>
 

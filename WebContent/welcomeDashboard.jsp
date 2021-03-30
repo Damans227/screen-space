@@ -80,7 +80,7 @@
 				<form action="imageController" method="post"
 					enctype="multipart/form-data">
 					<input type="file" name="file" id="file" /> <input
-						class="btn btn-secondary" type="submit" value="Upload">
+						class="btn btn-dark" type="submit" value="Upload">
 				</form>
 				<%@include file="components/message.jsp"%>
 			</div>
@@ -269,7 +269,7 @@
 
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary"
+					<button type="button" class="btn btn-dark"
 						data-dismiss="modal">Close</button>
 				</div>
 			</div>

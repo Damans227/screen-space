@@ -51,5 +51,6 @@
 
 ## What the app looks like
 
-![screenshot1](https://raw.githubusercontent.com/Damans227/Containerlive/main/screenshots/image1.png)
-![screenshot2](https://raw.githubusercontent.com/Damans227/Containerlive/main/screenshots/image2.png)
+![screenshot1](https://raw.githubusercontent.com/Damans227/Screenspace/main/screenshots/screen1.png)
+![screenshot2](https://raw.githubusercontent.com/Damans227/Screenspace/main/screenshots/screen2.png)
+![screenshot3](https://raw.githubusercontent.com/Damans227/Screenspace/main/screenshots/screen3.gif)
